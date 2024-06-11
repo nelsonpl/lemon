@@ -1,4 +1,4 @@
-const { checkEligibility } = require('../src/eligibility');
+const { checkEligibility } = require('../src/services/eligibility');
 
 test('Elegível - Exemplo 1', () => {
     const input = {
