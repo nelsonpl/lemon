@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { validateInput, checkEligibility } = require('./eligibility');
+const { checkEligibility } = require('./services/eligibility');
+const { validateInput } = require('./services/validateInput');
 
 const app = express();
 app.use(bodyParser.json());
