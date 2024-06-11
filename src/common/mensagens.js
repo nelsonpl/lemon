@@ -6,9 +6,7 @@ const mensagens = {
     historicoDeConsumoInvalido: 'Histórico de consumo inválido',
     classeDeConsumoNaoAceita: 'Classe de consumo não aceita',
     modalidadeTarifariaNaoAceita: 'Modalidade tarifária não aceita',
-    consumoBaixoMonofasico: 'Consumo muito baixo para tipo de conexão monofásico',
-    consumoBaixoBifasico: 'Consumo muito baixo para tipo de conexão bifásico',
-    consumoBaixoTrifasico: 'Consumo muito baixo para tipo de conexão trifásico'
+    consumoBaixo: 'Consumo muito baixo para tipo de conexão',
 };
 
 module.exports = mensagens;
