@@ -20,8 +20,8 @@ test('Não elegível - Exemplo 2', () => {
     const input = {
         numeroDoDocumento: '14041737706',
         tipoDeConexao: 'bifasico',
-        classeDeConsumo: 'rural',
-        modalidadeTarifaria: 'verde',
+        classeDeConsumo: 'espacoPublico',
+        modalidadeTarifaria: 'laranja',
         historicoDeConsumo: [3878, 9760, 5976, 2797, 2481, 5731, 7538, 4392, 7859, 4160],
     };
 

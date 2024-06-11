@@ -1,27 +1,26 @@
 const mensagens = require('../common/mensagens');
 const round = require('../common/round');
+const { classesDeConsumo, modalidadesTarifarias } = require('../common/tipos');
 
 function checkEligibility(input) {
-    const { tipoDeConexao, classeDeConsumo, modalidadeTarifaria, historicoDeConsumo } = input;
-
     let razoesDeInelegibilidade = [];
 
-    if (!['comercial', 'residencial', 'industrial'].includes(classeDeConsumo)) {
+    if (!classesDeConsumo.includes(input.classeDeConsumo)) {
         razoesDeInelegibilidade.push(mensagens.classeDeConsumoNaoAceita);
     }
 
-    if (!['convencional', 'branca'].includes(modalidadeTarifaria)) {
+    if (!modalidadesTarifarias.includes(input.modalidadeTarifaria)) {
         razoesDeInelegibilidade.push(mensagens.modalidadeTarifariaNaoAceita);
     }
 
-    const mediaConsumo = historicoDeConsumo.reduce((sum, value) => sum + value, 0) / historicoDeConsumo.length;
-    if (tipoDeConexao === 'monofasico' && mediaConsumo < 400) {
+    const mediaConsumo = input.historicoDeConsumo.reduce((sum, value) => sum + value, 0) / input.historicoDeConsumo.length;
+    if (input.tipoDeConexao === 'monofasico' && mediaConsumo < 400) {
         razoesDeInelegibilidade.push(mensagens.consumoBaixo);
     }
-    if (tipoDeConexao === 'bifasico' && mediaConsumo < 500) {
+    if (input.tipoDeConexao === 'bifasico' && mediaConsumo < 500) {
         razoesDeInelegibilidade.push(mensagens.consumoBaixo);
     }
-    if (tipoDeConexao === 'trifasico' && mediaConsumo < 750) {
+    if (input.tipoDeConexao === 'trifasico' && mediaConsumo < 750) {
         razoesDeInelegibilidade.push(mensagens.consumoBaixo);
     }
 
